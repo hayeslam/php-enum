@@ -1,0 +1,25 @@
+{
+    "name": "hayes/php-enum",
+    "description": "Extension for the myclabs/php-enum library",
+    "keywords": ["enum", "php-enum"],
+    "type": "library",
+    "require": {
+        "myclabs/php-enum": "^1.8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hayes\\Enum\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PHP Enum contributors",
+            "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+        },
+        {
+            "name": "hayes",
+            "email": "hayeslam@163.com"
+        }
+    ]
+}
