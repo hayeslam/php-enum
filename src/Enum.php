@@ -9,9 +9,9 @@ abstract class Enum extends \MyCLabs\Enum\Enum
      *
      * @return array
      */
-    protected static function labels()
+    protected static function labels(): array
     {
-        return array();
+        return [];
     }
 
     /**
@@ -23,7 +23,7 @@ abstract class Enum extends \MyCLabs\Enum\Enum
     {
         $labels = static::labels();
 
-        return isset($labels[$this->value]) ? $labels[$this->value] : $this->getKey();
+        return $labels[$this->value] ?? $this->getKey();
     }
 
     /**
@@ -31,12 +31,11 @@ abstract class Enum extends \MyCLabs\Enum\Enum
      *
      * @return array
      */
-    public static function options()
+    public static function options(): array
     {
-        $array = array();
-        $labels = static::labels();
-        foreach (parent::toArray() as $key => $value) {
-            $array[$key] = isset($labels[$value]) ? $labels[$value] : $value;
+        $array = [];
+        foreach (self::values() as $key => $value) {
+            $array[$key] = $value->getLabel();
         }
 
         return $array;
