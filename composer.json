@@ -4,11 +4,21 @@
     "keywords": ["enum", "php-enum"],
     "type": "library",
     "require": {
+        "php": "^7.3 || ^8.0",
+        "ext-json": "*",
         "myclabs/php-enum": "^1.8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     },
     "autoload": {
         "psr-4": {
             "Hayes\\Enum\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "license": "MIT",
